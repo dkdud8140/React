@@ -1,0 +1,18 @@
+div.table_box{
+	width: 100vw;
+}
+
+table.main_table {
+	width: 90%;
+	border-collapse: collapse;
+}
+
+table.main_table th{
+	padding: 1rem;
+	font-weight: bold;
+	background-color: #eeeeee;
+}
+
+table.main_table td{
+	padding: 1rem;
+}
