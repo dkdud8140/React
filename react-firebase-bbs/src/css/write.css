@@ -1,0 +1,34 @@
+form.write_form {
+	width: 90%;
+	padding: 20px;
+}
+
+form.write_form div {
+	width: 80%;
+	padding: 15px;
+	display: flex;
+}
+
+form.write_form label{
+	flex: 1;
+	padding: 1rem;
+	text-align: right;
+}
+
+
+form.write_form input{
+	flex: 5;
+	width: 80%;
+	padding: 1rem;
+}
+
+form.write_form button{
+	float: left;
+	margin-left: 15%;
+	padding: 10px 15px;
+	background-color: black;
+	color: blanchedalmond;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+}
