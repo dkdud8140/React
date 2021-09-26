@@ -17,6 +17,10 @@ const bbsSample = {
 function App() {
 
 	const [ bbsVO, setBbsVO] = useState(bbsSample);
+	const bbsChange = (e) =>{
+		const { name, value } = e.target;
+		setBbsVO( {...bbsVO,[name]:value});
+	}
 
   return (
     <div className="App">
@@ -24,7 +28,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
 	  <section className="main_section">
-			<article><Write bbs={bbsVO}/></article>
+			<article><Write bbs={bbsVO} onBBsChange={bbsChange}/></article>
 			<article><View bbs={bbsVO}/></article>
 		</section>
     </div>
