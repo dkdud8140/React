@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { firestore } from "../config/BBSConfig";
 import moment from "moment";
 import { useHistory, useRouteMatch } from "react-router-dom";
-
-/* eslint-disable react-hooks/exhaustive-deps */
 
 // props.history
 /**
@@ -13,44 +11,42 @@ import { useHistory, useRouteMatch } from "react-router-dom";
  * 이때 react-router-dom은 매개변수로 history라는 변수를 전달한다
  * history변수는 routing과 관련된 변수이다
  * history.push(URL) : URL로 redirect 하라는 명령이다
+ *
+ * react-router-dom 최신버전에서는
+ * 매개변수를 지정하기 않고 use 함수를 사용하여 history를
+ * 사용할수 있다.
+ *
+ * react use로 시작되는 함수들을 Hook 함수라고 한다
+ * Hook 함수 : 가로채기 함수, 시스템(react)에 의해서
+ * 자동으로 실행되거나, 작동되는 일을 수행하는 함수들..
  */
-
-/*
-react use로 시작되는 함수들ㅇ르 Hook 함수라고 한다
-Hook 함수 : 가로채기 함수, 시스템(react)에 의해서
-자동으로 실행되거나, 작동되는 일을 수행하는 함수들 
-*/
 function BBsWrite() {
-	
-	const router = useHistory();
-	// useRouteNatch()
-	// URL을 통해서 전달된 데이터들
-	// queryString, pathVarriable
-	// ?변수=값		/url/값
-	const match = useRouteMatch();
-	// /write/:id로 설정된 Route에서 id 위치에 담긴 변수 값 가져오기
-	const docId = match.params.id;
-  	const [bbs, setBBs] = useState({
-		b_writer: "",
-		b_subject: "",
-		b_content: "",
-		b_date: "",
-		b_time: "",
+  const history = useHistory();
+  // useRouteMatch()
+  // URL을 통해서 전달된 데이터들
+  // queryString, pathVarriable
+  // ?변수=값     /URL/값
+  const match = useRouteMatch();
+  // /write/:id 로 설정된 Route에서
+  // id위치에 담긴 변수 값 가져오기
+  const docId = match.params.id;
+  const [bbs, setBBs] = useState({
+    b_writer: "",
+    b_subject: "",
+    b_content: "",
+    b_date: "",
+    b_time: "",
   });
 
-
-
-  const findByIdFetch = useCallback(async () =>{
-	  if(docId) {
-		const result = await firestore.collection('bbs')
-							.doc(docId).get();
-		if(result){					
-			setBBs(result.data());
-		}
-	  }
-  }, [docId])
-
-  useEffect(findByIdFetch, [findByIdFetch]);
+  const findByidFetch = useCallback(async () => {
+    if (docId) {
+      const result = await firestore.collection("bbs").doc(docId).get();
+      if (result.data()) {
+        setBBs(result.data());
+      }
+    }
+  }, [docId]);
+  useEffect(findByidFetch, [findByidFetch]);
 
   // onChange Event 핸들러
   // 키보드로 입력한 데이터를 bbs 객체에 setting 하는 일을 수행한다
@@ -68,8 +64,10 @@ function BBsWrite() {
     // b_date, b_time 칼럼을 추가하겠다
     const saveBBS = {
       ...bbs,
-	  // bbs.b_date의 값이 ""이 아니면 bbs.b_date를 b_date 칼럼에 저장하고
-	  //				""이면 moment().format("..")값을 b_date 칼럼에 저장하라
+      // bbs.b_date의 값이 "" 이
+      //		아니면 bbs.b_date를 b_date 칼럼에 저장하고
+      // bbs.b_date의 값이 "" 이면
+      //		moment()... 값을 b_date 칼럼에 저장하라
       b_date: bbs.b_date || moment().format("YYYY[-]MM[-]DD"),
       b_time: bbs.b_time || moment().format("HH:mm:ss"),
     };
@@ -86,19 +84,19 @@ function BBsWrite() {
       .set(saveBBS)
       .then((result) => {
         console.log(result);
-        router.push("/");
+        history.push("/");
       });
   };
 
   return (
-    <div className="bbs_write">
+    <div class="bbs_write">
       <div>
         <input
           type="text"
           name="b_writer"
           onChange={onChange}
           placeholder="작성자"
-		  defaultValue={bbs.b_writer}
+          defaultValue={bbs.b_writer}
         />
       </div>
       <div>
@@ -113,7 +111,7 @@ function BBsWrite() {
           name="b_subject"
           onChange={onChange}
           placeholder="제목"
-		  defaultValue={bbs.b_subject}
+          defaultValue={bbs.b_subject}
         />
       </div>
       <div>
@@ -122,7 +120,7 @@ function BBsWrite() {
           name="b_content"
           onChange={onChange}
           placeholder="내용"
-		  defaultValue={bbs.b_content}
+          defaultValue={bbs.b_content}
         />
       </div>
       <div>
@@ -130,7 +128,6 @@ function BBsWrite() {
       </div>
     </div>
   );
- 
 }
 
 export default BBsWrite;

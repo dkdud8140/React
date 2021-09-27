@@ -11,11 +11,11 @@ function App() {
         <MainNav />
         <section className="main_section">
           <Route exact path="/" component={BBsMain} />
-		  <Switch>
-			<Route exact path="/write/:id" component={BBsWrite} />
-			<Route exact path="/write" component={BBsWrite} />
-			<Route exact path="/detail/:id" component={BBsDetail} />
-		  </Switch>
+          <Switch>
+            <Route exact path="/write/:id" component={BBsWrite} />
+            <Route exact path="/write" component={BBsWrite} />
+            <Route exact path="/detail/:id" component={BBsDetail} />
+          </Switch>
         </section>
         <Footer />
       </div>
