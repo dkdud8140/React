@@ -1,0 +1,44 @@
+div.input_box {
+	border: 1px solid #eee;
+	width: 70vw;
+	margin: 20px auto;
+}
+
+div.input_box div {
+	display: flex;
+}
+
+div.input_box div input,
+div.input_box div label {
+	padding: 1rem;
+	margin: 15px;
+}
+
+
+div.input_box div label{
+	text-align: right;
+	width: 30%;
+}
+
+
+div.input_box div input{
+	text-align: right;
+	width: 40%;
+}
+
+div.input_box div input:focus{
+	outline: inherit;
+	background-color: #eee;
+	border:none;
+}
+
+button.save_btn {
+	padding: 1rem;
+	outline: none;
+	background-color: darkslategrey;
+	color: whitesmoke;
+	border: none;
+	border-radius: 3px;
+	margin: 15px;
+	cursor: pointer;
+}

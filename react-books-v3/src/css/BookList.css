@@ -1,0 +1,16 @@
+table.table_list {
+	width: 80%;
+	margin: 20px auto;
+}
+
+table.table_list thead{
+	background-color: cadetblue;
+	font-weight: 700;
+	font-size: 20px;
+	color: white;
+}
+
+table.table_list thead tr {
+	padding: 15px;
+	height: 40px;
+}
