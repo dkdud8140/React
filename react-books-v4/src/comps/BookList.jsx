@@ -1,13 +1,6 @@
-import {React, useContext } from 'react'
+import {React } from 'react'
 import "../css/BookList.css"
 import BookItem from './BookItem';
-
-const title = ["ID", "도서명", "장르"];
-
-	const tHead = title.map((item)=>{
-		return <th>{title}</th>
-	})
-
 
 function BookList() {
 

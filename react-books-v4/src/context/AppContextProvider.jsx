@@ -1,4 +1,4 @@
-import React, { Children, createContext, useContext, useState } from 'react'
+import React, {  createContext, useContext, useState } from 'react'
 
 const AppContext = createContext();
 
@@ -7,7 +7,7 @@ export const useBookContext = () =>{
 }
 
 
-function AppContextProvider({children}) {
+function AppContextProvider({Children}) {
 
 	const [book, setBook] = useState({
 		b_id : 0,
@@ -22,7 +22,7 @@ function AppContextProvider({children}) {
 
 	return (
 		<AppContextProvider value={providerData}> 
-			{children}
+			{Children}
 		</AppContextProvider>
 	)
 }
