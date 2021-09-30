@@ -1,16 +1,16 @@
 import {React } from 'react'
-import { Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import BookInput from './BookInput'
 import BookList from "./BookList"
-import AppContextProvider from "../context/AppContextProvider"
+import AppContextProvider from '../context/AppContextProvider';
 
 function BookMain() {
 	return (
 		<>
 		<AppContextProvider>
-			<Route path="/" exact>여기는 HOME</Route>	
-			<Route path="/insert" exact component={BookInput}></Route>	
-			<Route path="/list" exact component={BookList}></Route>
+				<Route path="/" exact>여기는 HOME</Route>	
+				<Route path="/insert" exact component={BookInput}></Route>	
+				<Route path="/list" exact component={BookList}></Route>
 		</AppContextProvider>
 		</>
 	)

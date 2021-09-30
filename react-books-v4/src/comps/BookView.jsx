@@ -8,6 +8,7 @@ function BookBiew() {
 
 	return (
 		<div className="list_box">
+			<div><span>ID : {book.b_id}</span></div>
 			<div><span>도서명 : {book.b_name}</span></div>
 			<div><span>장르 : {book.b_genre}</span></div>
 		</div>

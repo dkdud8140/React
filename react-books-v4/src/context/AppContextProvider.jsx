@@ -6,25 +6,18 @@ export const useBookContext = () =>{
 	return useContext(AppContext);
 }
 
-
 function AppContextProvider({Children}) {
-
 	const [book, setBook] = useState({
 		b_id : 0,
-		b_name : "JAVA BOOK",
-		b_genre : "IT",
+		b_name : "",
+		b_genre : "",
 	});
-
-
 	const [bookList, setBookList] = useState([]);
-
 	const providerData = {book,setBook,bookList,setBookList};
-
 	return (
-		<AppContextProvider value={providerData}> 
+		<AppContext.Provider value={providerData}> 
 			{Children}
-		</AppContextProvider>
+		</AppContext.Provider>
 	)
 }
-
 export default AppContextProvider
