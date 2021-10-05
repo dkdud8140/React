@@ -1,0 +1,41 @@
+div.box_table {
+	width: 70vw;
+}
+
+table.table_list {
+	width: 90%;
+	margin: 15px auto;
+	border-collapse: collapse;
+	border :none;
+}
+
+table.table_list th,
+table.table_list td{
+	background-color: #eee;
+	padding: 12px;
+}
+
+table.table_list th:nth-of-type(1){
+	width: 5%;
+}
+table.table_list th:nth-of-type(2){
+	width: 10%;
+}
+table.table_list th:nth-of-type(3){
+	width: 60%;
+}
+table.table_list th:nth-of-type(4){
+	width: 15%;
+}
+table.table_list th:nth-of-type(5){
+	width: 10%;
+}
+
+
+table.table_list tbody tr:nth-of-type(odd) td{
+	background-color:white;
+}
+
+table.table_list tbody tr:nth-of-type(even) td{
+	background-color:lemonchiffon;
+}

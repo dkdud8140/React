@@ -1,0 +1,31 @@
+div.box_input {
+	width: 30vw;
+	height: 100%;
+}
+
+div.box_input input{
+	width: 80%;
+	display: block;
+	padding: 15px;
+	outline: none;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 15PX auto;
+	color: white;
+	font-weight: 600;
+}
+
+div.box_input button{
+	width: 80%;
+	padding: 15px;
+	outline: none;
+	border: none;
+	margin: 15PX auto;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+div.box_input button:active{
+	background-color: #B0873B;
+	color: black;
+}

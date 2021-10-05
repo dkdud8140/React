@@ -1,0 +1,32 @@
+div.formbox {
+	width: 40vw;
+	margin:20px auto;
+}
+
+div.formbox input {
+	width: 100%;
+	margin-top: 15px;
+	font-size: 15px;
+	padding: 15px;
+	color : #eee;
+}
+
+
+div.formbox input:focus {
+	outline: none;
+	border: none;
+	background-color: powderblue;
+}
+
+button.btn_login {
+	width: 100%;
+	margin-top: 15px;
+	font-size: 18px;
+	padding: 15px;
+	color: white;
+	background-color:steelblue;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
