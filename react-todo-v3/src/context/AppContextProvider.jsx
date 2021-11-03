@@ -50,17 +50,30 @@ const AppContextProvider = ({ children }) => {
   };
 
   const listDelete =(e) =>{
-	//   alert("삭제할까요?")
 	if(window.confirm("삭제할까요?")) {
-		alert("삭제하기")
-		return
+		const t_id = Number(e.target.dataset.todoId);
+		const _todoList = todoList
+			.filter((todo)=>todo.t_id !== t_id);
+
+		setTodoList(_todoList);
 	}
-	alert("삭제안하기")
-}
+	}	
+
+	const onCompClick = (e) =>{
+		const t_id = Number(e.target.dataset.todoId);
+		const index = todoList.findIndex((todo)=>todo.t_id === t_id);
+		const selectTodo = todoList[index];
+		const _todoList = [...todoList];
+
+		_todoList[index] = {...selectTodo, t_isComplete : !selectTodo.t_isComplete,};
+		setTodoList(_todoList);
+	}
+
 
   const propsData = {
     todo, setTodo, todoList, setTodoList, inputId,
-    onChange, onClick, onKeyPress,listDelete
+    onChange, onClick, onKeyPress,listDelete, onCompClick
+
   };
 
   return (

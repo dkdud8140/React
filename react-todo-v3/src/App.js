@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-
 import './App.css';
-import TodoMain from './comps/TodoMain';
-import TodoInput from "./comps/TodoInput"
-import TodoList from './comps/TodoList';
-// import CompButton from './comps/CompButton';
+import {  MainComp,} from "./comps"
+import UserContextProvider from './context/UserContextProvider'
 
 function App() {
   return (
 	  <div>
 		<header className="App-header">
-		<img src={logo} className="App-logo" alt="logo" />
+			<h1>TO DO LIST</h1>
 		</header>
-		<TodoMain form={<TodoInput />} children={<TodoList/>} header="오늘할일">
-		
-		{/* <TodoList /> */}
-		</TodoMain>
-
-		{/* <CompButton>HOME</CompButton>
-		<CompButton>바로가기</CompButton>
-		<CompButton>버튼복붙</CompButton> */}
+		<UserContextProvider>
+			<MainComp/>
+		</UserContextProvider>
 	</div>
   );
 }

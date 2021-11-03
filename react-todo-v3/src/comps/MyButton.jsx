@@ -7,11 +7,7 @@ function MyButton() {
 		color:"white"
 	}
 
-	return (
-		<button style={btnStyle}>
-			바로가기
-		</button>
-		)
+	return <button style={btnStyle}>바로가기</button>
 }
 
 export default MyButton

@@ -3,21 +3,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
-.App-logo {
-	height: 15vmin;
-	pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-	  animation: App-logo-spin infinite 20s linear;
-	}
-  }
   
   .App-header {
 	background-color: #282c34;
-	min-height: 25vh;
+	min-height: 15vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -25,21 +14,34 @@
 	font-size: calc(10px + 2vmin);
 	color: white;
   }
-  
-  .App-link {
-	color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-	from {
-	  transform: rotate(0deg);
-	}
-	to {
-	  transform: rotate(360deg);
-	}
-  }
 
 
+  /* 네비게이션 */
+  ul.main_nav {
+	display: flex;
+	background-color: black;
+	color: white;
+	list-style: none;
+  }
+  
+  ul.main_nav li:nth-of-type(2) {
+	margin-left: auto;
+  }
+  
+  ul.main_nav a {
+	display: inline-block;
+	padding: 1rem;
+	text-decoration: none;
+	color: inherit;
+  }
+
+  ul.main_nav a:hover {
+	background-color: cadetblue;
+	color: black;
+	font-weight: 700;
+}
+
+/* 메인 */
 main.main_box{
 	width: 50vw;
 	margin: 15px auto;
@@ -47,6 +49,7 @@ main.main_box{
 	contain: content;
 	box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
 }
+
 .todoHead {
 	width: 100%;
 	background-color: cadetblue;
@@ -56,6 +59,7 @@ main.main_box{
 }
 
 
+/* 입력 */
 .input_box{
 	width: 100%;
 	display: flex;
@@ -85,6 +89,7 @@ main.main_box{
 }
 
 
+/* 아이템 */
 div.todo_item {
 	display: flex;
 	width: 100%;
@@ -94,13 +99,70 @@ div.todo_item div {
 	font-weight: bold;
 	padding: 15px;
 	font-size: 20px;
+	cursor: pointer;
 } 
 
-.todo_item div:nth-of-type(1){
+.todo_item div.todo_delete{
 	color: red;
-	cursor: pointer;
+	opacity: 0;
+}
+
+.todo_item:hover div.todo_delete{
+	opacity: 1;
 }
 
 .todo_item div:nth-of-type(2){
 	color: #888;
+	word-break: break-all;
 }
+
+.checked {
+	text-decoration-line: line-through;
+	color: #adb5bd;
+  }
+  .check_mark {
+	font-size: 1.5rem;
+	line-height: 1rem;
+	margin-left: 1rem;
+	color: #3bc9db;
+  }
+
+
+  /* 로그인화면 / 가입화면 */
+  div.formbox, div.join_box {
+	width: 40vw;
+	margin:20px auto;
+}
+
+div.formbox input, div.join_box input {
+	width: 100%;
+	margin-top: 15px;
+	font-size: 15px;
+	padding: 15px;
+	color : #333;
+}
+
+
+div.formbox input:focus,
+div.join_box input:focus{
+	outline: none;
+	border: none;
+	background-color: powderblue;
+	color: #000;
+}
+
+button.btn_login,
+button.btn_join {
+	width: 100%;
+	margin-top: 15px;
+	font-size: 18px;
+	padding: 15px;
+	color: white;
+	background-color:cadetblue;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+

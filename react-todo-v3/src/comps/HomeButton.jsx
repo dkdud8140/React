@@ -6,11 +6,7 @@ function HomeButton() {
 		color:"white"
 	}
 
-	return (
-		<button style={btnStyle}>
-			HOME
-		</button>
-		)
+	return <button style={btnStyle}>HOME</button>
 }
 
 
