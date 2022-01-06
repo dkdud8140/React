@@ -2,6 +2,7 @@ import React from "react";
 import "../css/MainNav.css";
 import { NavLink } from "react-router-dom";
 
+
 function MainNav() {
   return (
     <ul className="main_nav">
